@@ -1,16 +1,17 @@
 package tw.com.voodoo0406.tryfragmentpager;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import tw.com.voodoo0406.tryfragmentpager.databinding.PagerFragmentBinding;
 
 public class PagerFragment extends Fragment {
+
   public static final String KEY_PAGER_DATA = "key_pager_data";
   private PagerFragmentBinding binding;
 

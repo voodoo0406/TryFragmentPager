@@ -1,16 +1,24 @@
 package tw.com.voodoo0406.tryfragmentpager;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.FragmentActivity;
+import java.util.Arrays;
 import tw.com.voodoo0406.tryfragmentpager.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
-  ActivityMainBinding binding;
+  public static final String[] TITLES = {"ABC", "DEF", "GHI", "JKL", "MNO"};
+  ActivityMainBinding mBinding;
+  PagerAdapter mPagerAdapter;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    mPagerAdapter = new PagerAdapter(this);
+    mBinding.myViewPager.setAdapter(mPagerAdapter);
+    mPagerAdapter.setPages(Arrays.asList(TITLES));
+    mPagerAdapter.notifyDataSetChanged();
   }
 }
